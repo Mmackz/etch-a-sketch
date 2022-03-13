@@ -6,6 +6,7 @@
 
 body {
    margin: 0;
+   background: #eeeeee;
 }
 
 header {
@@ -24,15 +25,16 @@ main {
 }
 
 .draw {
-   width: 95%;
+   width: 93.333%;
    max-width: 500px;
    max-height: 500px;
-   box-shadow: inset 0 0 2px 0 black;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
    margin-bottom: 1.5rem;
+   border-radius: 8px;
+   overflow: hidden;
 }
 
 .controls {
@@ -52,4 +54,8 @@ main {
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
+}
+
+.square {
+   user-select: none;
 }

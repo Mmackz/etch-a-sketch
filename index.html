@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
-   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-   <script src="index.js" defer></script>
-   <title>TOP: ETCH-A-SKETCH</title>
-</head>
-<body>
-   <header>
-      <h1>ETCH-A-SKETCH</h1>
-   </header>
-   <main>
-      <div class="draw" id="draw"></div>
-      <input type="range" name="screen-size" id="grid-size">
-      <div class="controls">
-         <div class="buttons">
-            <button id="black">Black</button>
-            <button>Rainbow</button>
-            <button id="eraser">Eraser</button>
-            <button id="clear">Clear</button>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+      <script src="index.js" defer></script>
+      <title>TOP: ETCH-A-SKETCH</title>
+   </head>
+   <body>
+      <header>
+         <h1>ETCH-A-SKETCH</h1>
+      </header>
+      <main>
+         <div class="draw" id="draw"></div>
+         <label for="grid-size">Grid Size: <span id="size-text">48 x 48</span></label>
+         <input
+            type="range"
+            name="screen-size"
+            id="grid-size"
+            min="16"
+            max="80"
+            value="32"
+            step="16"
+         />
+         <div class="controls">
+            <div class="buttons">
+               <button id="black">Black</button>
+               <button>Rainbow</button>
+               <button id="eraser">Eraser</button>
+               <button id="clear">Clear</button>
+            </div>
+            <div class="pickers">
+               <div id="picker"></div>
+            </div>
          </div>
-         <div class="pickers">
-            <div id="picker"></div>
-            
-         </div>
-      </div>
-   </main>
-</body>
+      </main>
+   </body>
 </html>

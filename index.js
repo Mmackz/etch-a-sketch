@@ -33,30 +33,53 @@ function appendSquares(size) {
       square.classList.add("square");
       square.style.width = sqWidth;
       square.style.height = sqHeight;
-      square.style.background = "blue";
+      square.style.background = "white";
       drawingArea.appendChild(square);
    }
+   attachListeners();
+}
+
+function attachListeners() {
+   // event listeners for individual cells
+   const squares = document.querySelectorAll(".square")
+   squares.forEach((square) => {
+      square.addEventListener("mousemove", (event) => {
+         console.log("hi");
+         if (drawing) {
+            console.log("hi");
+            event.target.style.background = colorPicker.color.hexString;
+         }
+      });
+   });
 }
 
 // set initial height on load
 setHeight();
-appendSquares(32);
+appendSquares(48);
 
 // set height for drawing area on resize
 window.addEventListener("resize", (event) => {
    setHeight();
 });
 
+// set drawing variable to true when mouse button is down and false when up.
+let drawing = false;
+window.addEventListener("mousedown", () => {
+   drawing = true;
+});
+window.addEventListener("mouseup", () => {
+   drawing = false;
+});
 
 // event listeners for buttons
 blackBtn.addEventListener("click", () => {
-   colorPicker.color.set("#000")
+   colorPicker.color.set("#000");
 });
 
 eraserBtn.addEventListener("click", () => {
-   colorPicker.color.set("#fff")
-})
+   colorPicker.color.set("#fff");
+});
 
 clearBtn.addEventListener("click", () => {
-   appendSquares(32);
-})
+   appendSquares(48);
+});
