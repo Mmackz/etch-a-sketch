@@ -5,6 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
    <script src="index.js" defer></script>
    <title>TOP: ETCH-A-SKETCH</title>
 </head>
@@ -14,9 +15,18 @@
    </header>
    <main>
       <div class="draw" id="draw"></div>
+      <input type="range" name="screen-size" id="grid-size">
       <div class="controls">
-         <div class="buttons"></div>
-         <div class="pickers"></div>
+         <div class="buttons">
+            <button id="black">Black</button>
+            <button>Rainbow</button>
+            <button id="eraser">Eraser</button>
+            <button id="clear">Clear</button>
+         </div>
+         <div class="pickers">
+            <div id="picker"></div>
+            
+         </div>
       </div>
    </main>
 </body>
