@@ -7,3 +7,29 @@
 body {
    margin: 0;
 }
+
+header {
+   padding: 1rem;
+}
+
+h1 {
+   margin: 0;
+   text-align: center;
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.draw {
+   width: 95%;
+   max-width: 640px;
+   max-height: 640px;
+   box-shadow: inset 0 0 2px 0 black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
