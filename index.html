@@ -12,25 +12,31 @@
    <body>
       <main>
          <h1>Etch-A-Sketch</h1>
-         <div class="draw" id="draw"></div>
-         <div class="controls">
-            <button id="clear" class="clearBtn">Clear grid</button>
-            <div class="slider">
-               <label for="grid-size">Grid Size: <span id="size-text">48 x 48</span></label>
-               <input
-                  type="range"
-                  name="screen-size"
-                  id="grid-size"
-                  min="16"
-                  max="80"
-                  value="48"
-                  step="16"
-               />
-            </div>
-         </div>
+         <div class="container">
+            <div class="draw" id="draw"></div>
+            <div class="controls-container">
+               <div class="controls">
+                  <button id="clear" class="clearBtn">Clear grid</button>
+                  <div class="slider">
+                     <label for="grid-size"
+                        >Grid Size: <span id="size-text">48 x 48</span></label
+                     >
+                     <input
+                        type="range"
+                        name="screen-size"
+                        id="grid-size"
+                        min="16"
+                        max="80"
+                        value="48"
+                        step="16"
+                     />
+                  </div>
+               </div>
 
-         <div class="swatch-container">
-            <div class="swatches" id="swatches"></div>
+               <div class="swatch-container">
+                  <div class="swatches" id="swatches"></div>
+               </div>
+            </div>
          </div>
       </main>
    </body>
