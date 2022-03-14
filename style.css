@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Ubuntu:wght@700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -6,20 +8,23 @@
 
 body {
    margin: 0;
-   background: #eeeeee;
+   background: #ededed;
    height: 100%;
    min-height: 100vh;
+   font-family: 'Poppins', sans-serif;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 main {
-   height: 100vh;
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
+   justify-content: space-evenly;
    align-items: center;
    padding: 0.6rem 0;
-   min-height: 700px;
-   max-height: 780px;
+   height: 100vh;
+   min-height: 650px;
 }
 
 header {
@@ -29,13 +34,18 @@ header {
 h1 {
    margin: 0;
    text-align: center;
-   padding-bottom: 0.65rem;
+   padding-top: 0.35rem;
+   padding-bottom: 1rem;
+   font-size: 2.5rem;
+   text-decoration: underline;
+   font-family: "Ubuntu";
 }
 
 input {
    display: block;
    margin: 0.5rem 0 1rem;
    width: 210px;
+   cursor: pointer;
 }
 
 label {
@@ -56,8 +66,8 @@ span {
 
 .draw {
    width: 93.333%;
-   max-width: 500px;
-   max-height: 500px;
+   max-width: 480px;
+   max-height: 480px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -65,6 +75,7 @@ span {
    margin-bottom: 1rem;
    border-radius: 8px;
    overflow: hidden;
+   background: white;
 }
 
 .controls {
@@ -75,16 +86,24 @@ span {
 
 .clearBtn {
    align-self: center;
-   padding: 0.65rem 1.25rem;
+   padding: 0.55rem 1.25rem;
    white-space: nowrap;
    text-transform: uppercase;
-   letter-spacing: -1px;
    font-weight: bold;
-   transform: translateY(-7px);
+   transform: translateY(-8px);
    border-radius: 7px;
    border: none;
    background: blue;
    color: #eeeeee;
+   font-family: "poppins";
+   transition: color 260ms linear, background 260ms linear;
+   cursor: pointer;
+}
+
+.clearBtn:hover {
+   color: rgb(255, 73, 73);
+   background: white;
+   box-shadow: 0 0 5px 0 rgba(0, 0, 255, 0.377);
 }
 
 .square {
@@ -110,6 +129,7 @@ span {
    height: 60px;
    border: 2px solid black;
    border-radius: 8px;
+   cursor: pointer;
 }
 
 .current-color {

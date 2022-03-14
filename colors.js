@@ -23,7 +23,7 @@ colors.forEach((hexColor) => {
       color.innerHTML = `<img src="eraserclr.png" width=20>`;
       color.setAttribute(
          "style",
-         "display: flex; justify-content: center; align-items: center;"
+         "display: flex; justify-content: center; align-items: center; background: #fff;"
       );
    }
    swatchesEl.appendChild(color);
