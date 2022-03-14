@@ -1,19 +1,10 @@
 // DOM elements
 const drawingArea = document.getElementById("draw");
-const blackBtn = document.getElementById("black");
-const eraserBtn = document.getElementById("eraser");
+const gridSizeInput = document.getElementById("grid-size");
+const gridSizeText = document.getElementById("size-text");
 const clearBtn = document.getElementById("clear");
+const colorEls = document.querySelectorAll(".color");
 
-// color picker using iro.js package
-const colorPicker = new iro.ColorPicker("#picker", {
-   width: 100,
-   layoutDirection: "horizontal",
-   sliderSize: 20,
-   handleRadius: 5,
-   borderWidth: 2,
-   borderColor: "black",
-   margin: 30
-});
 
 // set height of drawing area based off calulated width to keep 1:1 ratio.
 function setHeight() {
@@ -41,21 +32,24 @@ function appendSquares(size) {
 
 function attachListeners() {
    // event listeners for individual cells
-   const squares = document.querySelectorAll(".square")
+   const squares = document.querySelectorAll(".square");
    squares.forEach((square) => {
       square.addEventListener("mousemove", (event) => {
-         console.log("hi");
          if (drawing) {
-            console.log("hi");
-            event.target.style.background = colorPicker.color.hexString;
+            event.target.style.background = activeColor;
          }
+      });
+      square.addEventListener("click", (event) => {
+         event.target.style.background = activeColor;
       });
    });
 }
 
-// set initial height on load
+// set initial height and grid size on load
+let gridSize = gridSizeInput.value;
 setHeight();
-appendSquares(48);
+appendSquares(gridSize);
+colorEls[0].classList.add("current-color");
 
 // set height for drawing area on resize
 window.addEventListener("resize", (event) => {
@@ -71,15 +65,27 @@ window.addEventListener("mouseup", () => {
    drawing = false;
 });
 
+// listener for grid-size changes
+gridSizeInput.oninput = (event) => {
+   gridSize = event.target.value;
+   gridSizeText.textContent = `${gridSize} x ${gridSize}`;
+   appendSquares(gridSize);
+};
+
+// listeners for color changes 
+let activeColor = "#000";
+let prevNode = colorEls[0];
+
+colorEls.forEach((colorEl) => {
+   colorEl.onclick = function () {
+      activeColor = this.getAttribute("data-color");
+      colorEl.classList.add("current-color");
+      prevNode.classList.remove("current-color");
+      prevNode = colorEl;
+   }
+})
+
 // event listeners for buttons
-blackBtn.addEventListener("click", () => {
-   colorPicker.color.set("#000");
-});
-
-eraserBtn.addEventListener("click", () => {
-   colorPicker.color.set("#fff");
-});
-
 clearBtn.addEventListener("click", () => {
-   appendSquares(48);
+   appendSquares(gridSize);
 });

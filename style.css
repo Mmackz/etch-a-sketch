@@ -7,18 +7,48 @@
 body {
    margin: 0;
    background: #eeeeee;
+   height: 100%;
+   min-height: 100vh;
+}
+
+main {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.6rem 0;
+   min-height: 700px;
+   max-height: 780px;
 }
 
 header {
-   padding: 1rem;
+   padding-bottom: 0.75rem;
 }
 
 h1 {
    margin: 0;
    text-align: center;
+   padding-bottom: 0.65rem;
 }
 
-main {
+input {
+   display: block;
+   margin: 0.5rem 0 1rem;
+   width: 210px;
+}
+
+label {
+   display: block;
+   text-align: center;
+}
+
+span {
+   font-weight: bold;
+}
+
+.container {
+   width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -32,30 +62,79 @@ main {
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
-   margin-bottom: 1.5rem;
+   margin-bottom: 1rem;
    border-radius: 8px;
    overflow: hidden;
 }
 
 .controls {
    display: flex;
-   justify-content: space-evenly;
-   width: 100%;
+   justify-content: space-between;
+   width: 372px;
 }
 
-.buttons {
-   display: flex;
-   flex-direction: column;
-   gap: 0.5rem;
-}
-
-.pickers {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   align-items: center;
+.clearBtn {
+   align-self: center;
+   padding: 0.65rem 1.25rem;
+   white-space: nowrap;
+   text-transform: uppercase;
+   letter-spacing: -1px;
+   font-weight: bold;
+   transform: translateY(-7px);
+   border-radius: 7px;
+   border: none;
+   background: blue;
+   color: #eeeeee;
 }
 
 .square {
    user-select: none;
+}
+
+.swatch-container {
+   display: flex;
+   justify-content: space-evenly;
+   width: 100%;
+}
+
+.swatches {
+   width: 372px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 1rem;
+}
+
+.color {
+   width: 60px;
+   height: 60px;
+   border: 2px solid black;
+   border-radius: 8px;
+}
+
+.current-color {
+   box-shadow: 0 0 7px 3px rgb(65, 68, 252);
+}
+
+@media (max-width: 380px) {
+   html {
+      font-size: 15px;
+   }
+
+   .controls {
+      max-width: 320px;
+   }
+
+   input {
+      width: 180px;
+   }
+
+   .swatches {
+      max-width: 320px;
+   }
+
+   .color {
+      width: 46px;
+      height: 46px;
+   }
 }

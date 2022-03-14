@@ -5,36 +5,35 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="style.css" />
-      <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+      <script src="colors.js" defer></script>
       <script src="index.js" defer></script>
       <title>TOP: ETCH-A-SKETCH</title>
    </head>
    <body>
-      <header>
-         <h1>ETCH-A-SKETCH</h1>
-      </header>
       <main>
-         <div class="draw" id="draw"></div>
-         <label for="grid-size">Grid Size: <span id="size-text">48 x 48</span></label>
-         <input
-            type="range"
-            name="screen-size"
-            id="grid-size"
-            min="16"
-            max="80"
-            value="32"
-            step="16"
-         />
+         <div class="container">
+            <h1>ETCH-A-SKETCH</h1>
+            <div class="draw" id="draw"></div>
+         </div>
+
          <div class="controls">
-            <div class="buttons">
-               <button id="black">Black</button>
-               <button>Rainbow</button>
-               <button id="eraser">Eraser</button>
-               <button id="clear">Clear</button>
+            <button id="clear" class="clearBtn">Clear grid</button>
+            <div class="slider">
+               <label for="grid-size">Grid Size: <span id="size-text">48 x 48</span></label>
+               <input
+                  type="range"
+                  name="screen-size"
+                  id="grid-size"
+                  min="16"
+                  max="80"
+                  value="48"
+                  step="16"
+               />
             </div>
-            <div class="pickers">
-               <div id="picker"></div>
-            </div>
+         </div>
+
+         <div class="swatch-container">
+            <div class="swatches" id="swatches"></div>
          </div>
       </main>
    </body>
