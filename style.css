@@ -13,6 +13,7 @@ body {
    min-height: 100vh;
    font-family: "Poppins", sans-serif;
    display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content: center;
 }
@@ -28,8 +29,8 @@ main {
    width: 100%;
 }
 
-header {
-   padding-bottom: 0.75rem;
+footer {
+   display: none;
 }
 
 h1 {
@@ -58,6 +59,17 @@ span {
    font-weight: bold;
 }
 
+i {
+   font-style: normal;
+   font-size: 24px;
+}
+
+a,
+a:hover,
+a:active {
+   color: inherit;
+}
+
 .container {
    width: 100%;
    display: flex;
@@ -78,6 +90,7 @@ span {
    border-radius: 8px;
    overflow: hidden;
    background: white;
+   box-shadow: 2px 2px 12px 0 rgba(49, 48, 49, 0.404);
 }
 
 .controls-container {
@@ -142,6 +155,17 @@ span {
    box-shadow: 0 0 7px 3px rgb(65, 68, 252);
 }
 
+.fa-github {
+   width: 24px;
+   height: 24px;
+   transition: transform 0.3s ease-in-out;
+   margin-left: 0.3rem;
+}
+
+.fa-github:hover {
+   transform: scale(1.05);
+}
+
 @media (max-width: 380px) {
    html {
       font-size: 15px;
@@ -166,6 +190,10 @@ span {
 }
 
 @media (min-width: 720px) {
+   footer {
+      display: block;
+   }
+
    .container {
       flex-direction: row-reverse;
       padding-bottom: 4.5rem;
