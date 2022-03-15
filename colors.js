@@ -20,7 +20,7 @@ colors.forEach((hexColor) => {
    color.setAttribute("data-color", hexColor);
    color.style.background = hexColor;
    if (hexColor === "#fff") {
-      color.innerHTML = `<img src="eraserclr.png" width=20>`;
+      color.innerHTML = `<img src="images/eraserclr.png" width=20>`;
       color.setAttribute(
          "style",
          "display: flex; justify-content: center; align-items: center; background: #fff;"
